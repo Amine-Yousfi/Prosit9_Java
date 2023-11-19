@@ -45,13 +45,38 @@ public class Main {
         societe.trierEmployeParNomDépartementEtGrade();
         societe.displayEmploye();
 
+
         DepartementHashSet departementHashSet = new DepartementHashSet();
-        Departement yourDepartment = new Departement(1, "YourDepartment", 10);
-        departementHashSet.ajouterDepartement(yourDepartment);
 
-        // Display all departments after adding yours
-        System.out.println("All Departments after adding yours:");
+        // Add some departments
+        Departement dep1 = new Departement(1, "IT", 50);
+        Departement dep2 = new Departement(2, "HR", 30);
+        Departement dep3 = new Departement(3, "Finance", 20);
+
+        departementHashSet.ajouterDepartement(dep1);
+        departementHashSet.ajouterDepartement(dep2);
+        departementHashSet.ajouterDepartement(dep3);
+
+
+        System.out.println("All Departments:");
         departementHashSet.displayDepartement();
-    }
+        System.out.println();
 
+        // Search for a department by name
+        String searchDepartment = "IT";
+        System.out.println("Searching for department with name " + searchDepartment + ": "
+                + departementHashSet.rechercherDepartement(searchDepartment));
+        System.out.println();
+
+        // Search for a department by reference
+        System.out.println("Searching for department by reference: " + departementHashSet.rechercherDepartement(dep2));
+        System.out.println();
+
+        // Remove a department
+        System.out.println("Removing department: " + dep2.getNom());
+        departementHashSet.supprimerDepartement(dep2);
+        departementHashSet.displayDepartement();
+        System.out.println();
+
+    }
 }
