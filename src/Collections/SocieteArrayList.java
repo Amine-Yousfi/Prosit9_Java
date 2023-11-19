@@ -1,5 +1,6 @@
-package entities;
+package Collections;
 
+import entities.Employee;
 import interfaces.IGestion;
 
 import java.util.ArrayList;

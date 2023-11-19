@@ -1,7 +1,9 @@
 package main;
 
+import Collections.DepartementHashSet;
+import entities.Departement;
 import entities.Employee;
-import entities.SocieteArrayList;
+import Collections.SocieteArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,5 +44,14 @@ public class Main {
         System.out.println("Sorting employees by department and grade:");
         societe.trierEmployeParNomDépartementEtGrade();
         societe.displayEmploye();
+
+        DepartementHashSet departementHashSet = new DepartementHashSet();
+        Departement yourDepartment = new Departement(1, "YourDepartment", 10);
+        departementHashSet.ajouterDepartement(yourDepartment);
+
+        // Display all departments after adding yours
+        System.out.println("All Departments after adding yours:");
+        departementHashSet.displayDepartement();
     }
+
 }
